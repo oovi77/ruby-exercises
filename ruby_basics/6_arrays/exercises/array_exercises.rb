@@ -77,6 +77,7 @@ def join(array, separator)
   return array.join(separator)
 end
 
+=begin
 puts "hello"
 
 a = [1, 2, 3]
@@ -84,3 +85,117 @@ temp = a.clear
 puts "a is: #{a.empty?}"
 puts "temp is: #{temp}"
 puts "are they equal #{temp == a}"
+=end
+
+=begin
+shoes = {
+  "summer" => "sandals",
+  "winter" => "boots"
+}
+
+puts shoes["summer"]
+temp = shoes.fetch("hicking", "hicking boots")
+puts "temp is #{temp}"
+puts "shoes is: #{shoes}"
+=end
+
+=begin
+person = {name: 'bob', height: '6 ft', weight: '160 lbs', hair: 'brown'}
+
+person.each do |key, value|
+  puts "Bob's #{key} is #{value}"
+end
+=end
+
+=begin
+def greeting (name, options = {})
+  if options.empty?
+    puts "Hi, my name is #{name}"
+  else
+    puts "Hi, my name is #{name} and I'm #{options[:age]}" +
+         " years old and I live in #{options[:city]}."
+  end
+end
+
+greeting("Bob")
+greeting("Sam", {age: 62, city: "New York City"})
+greeting("Jim", age: 62, city: "New York City")
+=end
+
+=begin
+name_and_age = { "Bob" => 42, "Steve" => 31, "Joe" => 19}
+
+name_and_age.keys.each do |k|
+  puts "key is: #{k}"
+end
+=end
+
+=begin
+
+=end
+
+=begin
+family = {  uncles: ["bob", "joe", "steve"],
+  sisters: ["jane", "jill", "beth"],
+  brothers: ["frank","rob","david"],
+  aunts: ["mary","sally","susan"]
+}
+=end
+
+
+
+=begin
+immediateFamily = []
+temp = []
+
+immediateFamily = family.select do |k , v| (k == :sisters || k == :brothers)
+end
+
+immediateFamily.each do |key, value|
+  temp += value
+end
+
+print temp
+=end
+
+
+=begin
+temp1 = []
+
+family.each do |key, value|
+  if (key == :brothers || key == :sisters) 
+    temp1 += value
+  end
+end
+
+print temp1
+=end
+
+=begin
+immediate_family = family.select do |k, v|
+  k == :sisters || k == :brothers
+end
+
+arr = immediate_family.values.flatten
+
+p arr
+=end
+
+#name_and_age = { "Bob" => 42, "Steve" => 31, "Joe" => 19}
+
+=begin
+name_and_age.each do |k, v|
+  puts "key is: #{k} , value is: #{v}"
+end
+=end
+
+# name_and_age.each {|k, v| puts "key iss: #{k} and value is: #{v}"}
+
+=begin
+def find_v (hash, val)
+  return hash.values.include?(val)
+end
+
+puts find_v(name_and_age, 31)
+puts find_v(name_and_age, 7)
+=end
