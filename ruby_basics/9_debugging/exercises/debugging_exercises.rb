@@ -1,3 +1,4 @@
+require 'pry-byebug'
 # First, we're going to practice reading the Stack Trace
 # Don't look at this method prior to running the test
 # Type 'rspec' into the terminal to run Rspec
@@ -10,7 +11,7 @@ def decrement_smallest_value(nested_array)
   nested_array.each do |array|
     array.each do |current_value|
       if smallest_value > current_value
-        smallest_value = current_valu
+        smallest_value = current_value
       end
     end
   end
@@ -24,7 +25,7 @@ def increment_greatest_value(nested_array)
   greatest_value = nested_array.flatten.min
   nested_array.each do |array|
     array.each do |current_value|
-      if greatest_value < nil
+      if greatest_value < current_value
         greatest_value = current_value
       end
     end
@@ -37,10 +38,15 @@ end
 
 def isogram?(string)
   original_length = string.length
-  string_array = string.downcase.split
+  #p "original length is: #{original_length}"
+  string_array = string.downcase.split("")
+  #p "str_array is: #{string_array}"
   unique_length = string_array.uniq.length
+  #p "unique length is: #{unique_length}"
   original_length == unique_length
 end
+
+#isogram?("Odin")
 
 # Can you guess what's next?
 # That's right! The final exercise from the lesson, which we'll debug with pry-byebug
@@ -50,7 +56,13 @@ end
 # Once you find the error, fix it and get the test to pass
 
 def yell_greeting(string)
+  #binding.pry
   name = string
-  name = name.downcase
+  name = name.upcase
   greeting = "WASSAP, #{name}!"
+  #p greeting
 end
+
+#p yell_greeting("this is a greeting")
+
+
